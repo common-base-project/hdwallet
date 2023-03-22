@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// 硬件钱包
 type HDWallet struct {
 	seed       []byte
 	btcChainId int

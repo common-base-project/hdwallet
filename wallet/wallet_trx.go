@@ -9,6 +9,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 )
 
+// 波场钱包
 type TrxWallet struct {
 	symbol     string
 	privateKey *ecdsa.PrivateKey

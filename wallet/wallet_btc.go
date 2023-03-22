@@ -14,6 +14,7 @@ import (
 
 var ErrAddressNotMatch = errors.New("address not match")
 
+// btc 钱包
 type BtcWallet struct {
 	symbol      string
 	segWitType  SegWitType

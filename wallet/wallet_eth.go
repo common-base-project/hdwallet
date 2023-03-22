@@ -11,6 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 )
 
+// eth 钱包
 type EthWallet struct {
 	symbol      string
 	chainId     int

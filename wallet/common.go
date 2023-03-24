@@ -100,6 +100,7 @@ func NewEntropy(bits int) (entropy []byte, err error) {
 	return bip39.NewEntropy(bits)
 }
 
+// NewMnemonic 新助记符
 func NewMnemonic(bits int) (mnemonic string, err error) {
 	entropy, err := NewEntropy(bits)
 	if err != nil {

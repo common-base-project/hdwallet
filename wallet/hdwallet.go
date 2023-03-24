@@ -23,6 +23,7 @@ func NewHDWallet(mnemonic, password string, btcChainId int, ethChainId int) (*HD
 	return &HDWallet{seed: seed, btcChainId: btcChainId, ethChainId: ethChainId}, nil
 }
 
+// 新建钱包
 func (this *HDWallet) NewWallet(symbol string, accountIndex, changeType, index int) (Wallet, error) {
 	path, err := MakeBip44Path(symbol, this.btcChainId, accountIndex, changeType, index)
 	if err != nil {
@@ -48,6 +49,7 @@ func (this *HDWallet) NewNativeSegWitWallet(accountIndex, changeType, index int)
 	return this.NewWalletByPath(SymbolBtc, path, SegWitNative)
 }
 
+// 通过路径新建钱包
 func (this *HDWallet) NewWalletByPath(symbol string, path string, segWitType SegWitType) (Wallet, error) {
 	var w Wallet
 	var err error

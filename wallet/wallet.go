@@ -1,6 +1,6 @@
 package wallet
 
-// Wallet 钱包
+// Wallet 钱包接口
 type Wallet interface {
 	ChainId() int
 

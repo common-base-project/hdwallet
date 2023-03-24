@@ -13,6 +13,7 @@ import (
 
 const ganacheCliPort = 8545
 
+// 新建client
 func RunGanache(accountPrivateKeys ...string) (*eth.EthClient, func(), error) {
 	if qa.IsProcessRunning(ganacheCliPort, "ganache-cli") {
 		return nil, nil, fmt.Errorf("ganache already running on port %d", ganacheCliPort)

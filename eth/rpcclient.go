@@ -20,6 +20,7 @@ type EthClient struct {
 	client    *rpc.Client
 }
 
+// NewEthClient 新建 rpc client
 func NewEthClient(URL string) (*EthClient, error) {
 	client, err := rpc.Dial(URL)
 	if err != nil {

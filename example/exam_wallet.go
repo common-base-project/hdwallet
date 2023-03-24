@@ -7,17 +7,20 @@ import (
 )
 
 func main() {
+	// 新助记符
 	mnemonic, err := wallet.NewMnemonic(128)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println("mnemonic:", mnemonic)
 
+	// 新建HD钱包
 	hdw, err := wallet.NewHDWallet(mnemonic, "", wallet.BtcChainMainNet, wallet.ChainMainNet)
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	// 新建钱包
 	w, err := hdw.NewWallet(wallet.SymbolBtc, 0, 0, 0)
 	if err != nil {
 		log.Fatal(err)
@@ -28,6 +31,7 @@ func main() {
 		w.DerivePublicKey(),
 		w.DeriveAddress())
 
+	// 新赛格智能钱包
 	w, err = hdw.NewSegWitWallet(0, 0, 0)
 	if err != nil {
 		log.Fatal(err)
@@ -38,6 +42,7 @@ func main() {
 		w.DerivePublicKey(),
 		w.DeriveAddress())
 
+	// 新本地赛格智能钱包
 	w, err = hdw.NewNativeSegWitWallet(0, 0, 0)
 	if err != nil {
 		log.Fatal(err)
